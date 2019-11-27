@@ -9,14 +9,17 @@
 #include "bluecadet/core/SettingsManager.h"
 #include "bluecadet/core/ScreenLayout.h"
 #include "bluecadet/text/StyledTextParser.h"
+#include "buttons/ButtonController.h"
 
 typedef std::shared_ptr<class MainController> MainControllerRef;
 
-class MainController : public::bluecadet::views::BaseView {
+class MainController : public bluecadet::views::BaseView {
 public:
 	MainController();
 	~MainController();
 
 	void setup();
 	void postLoadingSetup();
+private:
+	ButtonControllerRef mButtonController;
 };

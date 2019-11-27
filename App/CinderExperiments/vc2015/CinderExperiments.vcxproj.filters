@@ -84,6 +84,18 @@
     <Filter Include="Blocks\TUIO\src\cinder\tuio">
       <UniqueIdentifier>{F0E62EA0-6706-48D2-9DE5-AC0F9E94E50A}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\lines">
+      <UniqueIdentifier>{b48047d7-0a12-4e4c-9763-306808caa021}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\text">
+      <UniqueIdentifier>{ddd36551-8c77-463a-8328-5abccba5b5bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\images">
+      <UniqueIdentifier>{717892a7-dd54-404d-a9a5-e9d0497ebaa2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\buttons">
+      <UniqueIdentifier>{922ce40c-ab6e-4692-b2a0-0d09cd7231c7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\CinderExperimentsApp.cpp">
@@ -368,10 +380,22 @@
     <ClInclude Include="..\..\..\..\blocks\TUIO\src\cinder\tuio\Tuio.h">
       <Filter>Blocks\TUIO\src\cinder\tuio</Filter>
     </ClInclude>
+    <ClCompile Include="..\src\MainController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\buttons\ButtonController.cpp">
+      <Filter>Source Files\buttons</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\MainController.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\buttons\ButtonController.h">
+      <Filter>Source Files\buttons</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

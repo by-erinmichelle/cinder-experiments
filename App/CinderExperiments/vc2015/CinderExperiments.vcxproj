@@ -102,6 +102,7 @@
   <ItemGroup />
   <ItemGroup />
   <ItemGroup>
+    <ClCompile Include="..\src\buttons\ButtonController.cpp" />
     <ClCompile Include="..\src\CinderExperimentsApp.cpp" />
     <ClCompile Include="..\blocks\BluecadetText\src\bluecadet\text\FontManager.cpp" />
     <ClCompile Include="..\blocks\BluecadetText\src\bluecadet\text\StyledTextLayout.cpp" />
@@ -147,6 +148,7 @@
     <ClCompile Include="..\blocks\BluecadetViews\src\bluecadet\touch\drivers\TuioDriver.cpp" />
     <ClCompile Include="..\..\..\..\blocks\OSC\src\cinder\osc\Osc.cpp" />
     <ClCompile Include="..\..\..\..\blocks\TUIO\src\cinder\tuio\Tuio.cpp" />
+    <ClCompile Include="..\src\MainController.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h" />
@@ -197,6 +199,8 @@
     <ClInclude Include="..\blocks\BluecadetViews\src\bluecadet\touch\drivers\TuioDriver.h" />
     <ClInclude Include="..\..\..\..\blocks\OSC\src\cinder\osc\Osc.h" />
     <ClInclude Include="..\..\..\..\blocks\TUIO\src\cinder\tuio\Tuio.h" />
+    <ClInclude Include="..\src\buttons\ButtonController.h" />
+    <ClInclude Include="..\src\MainController.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

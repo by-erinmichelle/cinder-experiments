@@ -5,6 +5,7 @@
 #include "bluecadet/core/BaseApp.h"
 #include "bluecadet/text/FontManager.h"
 #include "bluecadet/text/StyledTextParser.h"
+#include "MainController.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -19,11 +20,15 @@ class CinderExperimentsApp : public BaseApp {
 	void setup() override;
 	void update() override;
 	void draw() override;
+	MainControllerRef mMainController;
 };
 
 void CinderExperimentsApp::setup()
 {
 	BaseApp::setup();
+	mMainController = make_shared<MainController>();
+	mMainController->setup();
+	getRootView()->addChild(mMainController);
 }
 
 void CinderExperimentsApp::prepareSettings(ci::app::App::Settings* settings) {

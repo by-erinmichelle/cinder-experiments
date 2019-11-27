@@ -14,7 +14,11 @@ MainController::MainController() : BaseView() { }
 MainController::~MainController() { }
 
 void MainController::setup() {
+	setSize(ScreenLayout::getInstance()->getAppSize());
 
+	mButtonController = make_shared<ButtonController>();
+	mButtonController->setup(getSize() - vec2(200));
+	addChild(mButtonController);
 }
 
 void MainController::postLoadingSetup() {
