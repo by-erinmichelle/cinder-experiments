@@ -15,6 +15,7 @@ MainController::~MainController() { }
 
 void MainController::setup() {
 	setSize(ScreenLayout::getInstance()->getAppSize());
+	mControllerSize = (getSize() - vec2(200));
 	mControllerButtonSize = vec2(getSize().x / (4 * 1.25), 50);
 
 	// setup buttons
@@ -28,16 +29,23 @@ void MainController::setup() {
 	backText->setText("Back");
 	mBackToMain->addChild(backText);
 
-
+	// setup controllers
 	mButtonController = make_shared<ButtonController>();
-	mButtonController->setup(getSize() - vec2(200));
+	mButtonController->setup(mControllerSize);
+	mImageController = make_shared<ImageController>();
+	mImageController->setup(mControllerSize);
+	mLineController = make_shared<LineController>();
+	mLineController->setup(mControllerSize);
+	mTextController = make_shared<TextController>();
+	mTextController->setup(mControllerSize);
 
 	// add children
 	addChild(mButtonController);
+	addChild(mImageController);
+	addChild(mLineController);
+	addChild(mTextController);
 	addChild(mButtonContainer);
 	addChild(mBackToMain);
-
-
 }
 
 void MainController::setupButtons()
@@ -105,25 +113,43 @@ void MainController::setState(State newState)
 	switch (newState) {
 	case BUTTONS:
 		hideButtons();
-
 		mButtonController->setAlpha(1.0);
+		//hide
+		mLineController->setAlpha(0.0);
+		mImageController->setAlpha(0.0);
+		mTextController->setAlpha(0.0);
 		break;
 	case LINES:
 		hideButtons();
-
+		mLineController->setAlpha(1.0);
+		//hide
+		mButtonController->setAlpha(0.0);
+		mImageController->setAlpha(0.0);
+		mTextController->setAlpha(0.0);
 		break;
-
 	case IMAGES:
 		hideButtons();
-
+		mImageController->setAlpha(1.0);
+		//hide
+		mButtonController->setAlpha(0.0);
+		mLineController->setAlpha(0.0);
+		mTextController->setAlpha(0.0);
 		break;
-
 	case TEXT:
 		hideButtons();
-
+		mTextController->setAlpha(1.0);
+		//hide
+		mButtonController->setAlpha(0.0);
+		mImageController->setAlpha(0.0);
+		mLineController->setAlpha(0.0);
 		break;
 	case MAIN:
 		showButtons();
+		//hide
+		mButtonController->setAlpha(0.0);
+		mImageController->setAlpha(0.0);
+		mTextController->setAlpha(0.0);
+		mLineController->setAlpha(0.0);
 		break;
 	}
 }

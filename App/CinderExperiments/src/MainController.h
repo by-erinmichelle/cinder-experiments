@@ -10,6 +10,9 @@
 #include "bluecadet/core/ScreenLayout.h"
 #include "bluecadet/text/StyledTextParser.h"
 #include "buttons/ButtonController.h"
+#include "images/ImageController.h"
+#include "lines/LineController.h"
+#include "text/TextController.h"
 
 typedef std::shared_ptr<class MainController> MainControllerRef;
 
@@ -31,6 +34,10 @@ private:
 
 	// Views
 	ButtonControllerRef mButtonController;
+	ImageControllerRef mImageController;
+	LineControllerRef mLineController;
+	TextControllerRef mTextController;
+
 	bluecadet::views::BaseViewRef mButtonContainer;
 	bluecadet::views::TouchViewRef mShowButtonController;
 	bluecadet::views::TouchViewRef mShowImageController;
@@ -40,4 +47,5 @@ private:
 
 
 	ci::vec2 mControllerButtonSize;
+	ci::vec2 mControllerSize;
 };
