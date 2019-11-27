@@ -18,8 +18,26 @@ public:
 	MainController();
 	~MainController();
 
+	enum State { BUTTONS, IMAGES, LINES, TEXT, MAIN };
+
 	void setup();
+	void setupButtons();
 	void postLoadingSetup();
+	void setState(State newState);
+	void hideButtons();
+	void showButtons();
+
 private:
+
+	// Views
 	ButtonControllerRef mButtonController;
+	bluecadet::views::BaseViewRef mButtonContainer;
+	bluecadet::views::TouchViewRef mShowButtonController;
+	bluecadet::views::TouchViewRef mShowImageController;
+	bluecadet::views::TouchViewRef mShowLineController;
+	bluecadet::views::TouchViewRef mShowTextController;
+	bluecadet::views::TouchViewRef mBackToMain;
+
+
+	ci::vec2 mControllerButtonSize;
 };

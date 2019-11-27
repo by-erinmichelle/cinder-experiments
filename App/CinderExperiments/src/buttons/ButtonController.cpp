@@ -11,6 +11,7 @@ void ButtonController::setup(ci::vec2 size)
 {
 	setSize(size);
 	setPosition(vec2(100));
+	setAlpha(0.0f);
 
 	mSize = vec2(size.x / (6 * kPadding), 50);
 
