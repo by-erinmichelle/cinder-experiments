@@ -26,6 +26,16 @@ class CinderExperimentsApp : public BaseApp {
 void CinderExperimentsApp::setup()
 {
 	BaseApp::setup();
+
+	// Setting up fonts
+	FontManager::getInstance()->setFontScale(1.0f / getDisplay()->getContentScale());
+	FontManager::getInstance()->setup(getAssetPath("fonts/fonts.json"));
+	StyleManager::getInstance()->setup(getAssetPath("fonts/styles.json"), "styles");
+	StyledTextParser::getInstance()->setDefaultOptions(
+		StyledTextParser::OptionFlags::INVERT_NESTED_ITALICS | StyledTextParser::OptionFlags::TRIM_WHITESPACE |
+		StyledTextParser::OptionFlags::TRIM_LEADING_BREAKS | StyledTextParser::OptionFlags::TRIM_TRAILING_BREAKS
+		| StyledTextParser::OptionFlags::STRIP_PARAGRAPH_TAG);
+
 	mMainController = make_shared<MainController>();
 	mMainController->setup();
 	getRootView()->addChild(mMainController);

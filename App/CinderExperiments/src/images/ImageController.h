@@ -26,7 +26,6 @@ private:
 	bluecadet::views::MaskViewRef	mMask;
 	bluecadet::views::ImageViewRef mDuotoneImage;
 
-
 	// Props
 	ci::vec2 mSize;
 	ci::vec2 mPosition;

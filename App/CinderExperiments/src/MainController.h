@@ -13,6 +13,7 @@
 #include "images/ImageController.h"
 #include "lines/LineController.h"
 #include "text/TextController.h"
+#include "bluecadet/views/StrokedRectView.h"
 
 typedef std::shared_ptr<class MainController> MainControllerRef;
 
@@ -49,4 +50,6 @@ private:
 	ci::vec2 mControllerButtonSize;
 	ci::vec2 mControllerSize;
 	ci::vec2 mControllerPosition = ci::vec2(100);
+	std::vector<bluecadet::views::TouchViewRef> mButtons;
+
 };
