@@ -386,6 +386,15 @@
     <ClCompile Include="..\src\buttons\ButtonController.cpp">
       <Filter>Source Files\buttons</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\images\ImageController.cpp">
+      <Filter>Source Files\images</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\lines\LineController.cpp">
+      <Filter>Source Files\lines</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\text\TextController.cpp">
+      <Filter>Source Files\text</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h">
@@ -396,6 +405,15 @@
     </ClInclude>
     <ClInclude Include="..\src\buttons\ButtonController.h">
       <Filter>Source Files\buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\images\ImageController.h">
+      <Filter>Source Files\images</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lines\LineController.h">
+      <Filter>Source Files\lines</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\text\TextController.h">
+      <Filter>Source Files\text</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

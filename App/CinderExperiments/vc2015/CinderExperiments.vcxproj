@@ -148,7 +148,10 @@
     <ClCompile Include="..\blocks\BluecadetViews\src\bluecadet\touch\drivers\TuioDriver.cpp" />
     <ClCompile Include="..\..\..\..\blocks\OSC\src\cinder\osc\Osc.cpp" />
     <ClCompile Include="..\..\..\..\blocks\TUIO\src\cinder\tuio\Tuio.cpp" />
+    <ClCompile Include="..\src\images\ImageController.cpp" />
+    <ClCompile Include="..\src\lines\LineController.cpp" />
     <ClCompile Include="..\src\MainController.cpp" />
+    <ClCompile Include="..\src\text\TextController.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h" />
@@ -200,7 +203,10 @@
     <ClInclude Include="..\..\..\..\blocks\OSC\src\cinder\osc\Osc.h" />
     <ClInclude Include="..\..\..\..\blocks\TUIO\src\cinder\tuio\Tuio.h" />
     <ClInclude Include="..\src\buttons\ButtonController.h" />
+    <ClInclude Include="..\src\images\ImageController.h" />
+    <ClInclude Include="..\src\lines\LineController.h" />
     <ClInclude Include="..\src\MainController.h" />
+    <ClInclude Include="..\src\text\TextController.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
