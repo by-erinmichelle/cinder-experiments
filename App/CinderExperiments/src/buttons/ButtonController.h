@@ -11,7 +11,7 @@ typedef std::shared_ptr<class ButtonController> ButtonControllerRef;
  
 class ButtonController : public bluecadet::views::BaseView {
 public:
-	void setup(ci::vec2 size);
+	void setup(ci::vec2 size, ci::vec2 position);
 	void handleHitState(cinder::EaseFn easing, int i);
 
 private:

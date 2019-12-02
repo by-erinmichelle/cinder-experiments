@@ -48,4 +48,5 @@ private:
 
 	ci::vec2 mControllerButtonSize;
 	ci::vec2 mControllerSize;
+	ci::vec2 mControllerPosition = ci::vec2(100);
 };

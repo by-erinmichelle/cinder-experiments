@@ -7,10 +7,10 @@ using namespace std;
 using namespace bluecadet;
 using namespace bluecadet::views;
 
-void ButtonController::setup(ci::vec2 size)
+void ButtonController::setup(ci::vec2 size, ci::vec2 position)
 {
 	setSize(size);
-	setPosition(vec2(100));
+	setPosition(position);
 	setAlpha(0.0f);
 
 	mSize = vec2(size.x / (6 * kPadding), 50);

@@ -31,13 +31,13 @@ void MainController::setup() {
 
 	// setup controllers
 	mButtonController = make_shared<ButtonController>();
-	mButtonController->setup(mControllerSize);
+	mButtonController->setup(mControllerSize, mControllerPosition);
 	mImageController = make_shared<ImageController>();
-	mImageController->setup(mControllerSize);
+	mImageController->setup(mControllerSize, mControllerPosition);
 	mLineController = make_shared<LineController>();
-	mLineController->setup(mControllerSize);
+	mLineController->setup(mControllerSize, mControllerPosition);
 	mTextController = make_shared<TextController>();
-	mTextController->setup(mControllerSize);
+	mTextController->setup(mControllerSize, mControllerPosition);
 
 	// add children
 	addChild(mButtonController);

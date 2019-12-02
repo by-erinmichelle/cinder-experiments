@@ -11,7 +11,7 @@ typedef std::shared_ptr<class LineController> LineControllerRef;
 
 class LineController : public bluecadet::views::BaseView {
 public:
-	void setup(ci::vec2 size);
+	void setup(ci::vec2 size, ci::vec2 position);
 
 private:
 

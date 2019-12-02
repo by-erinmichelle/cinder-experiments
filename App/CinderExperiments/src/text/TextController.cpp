@@ -7,6 +7,6 @@ using namespace std;
 using namespace bluecadet;
 using namespace bluecadet::views;
 
-void TextController::setup(ci::vec2 size)
+void TextController::setup(ci::vec2 size, ci::vec2 position)
 {
 }
