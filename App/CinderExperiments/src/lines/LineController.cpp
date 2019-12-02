@@ -13,7 +13,7 @@ void LineController::setup(ci::vec2 size, ci::vec2 position)
 	setPosition(position);
 	setAlpha(0.0f);
 
-	mSize = vec2(100, 0);
+	mSize = vec2(200, 0);
 
 	mButton = make_shared<TouchView>();
 	mButton->setSize(300, 70);
@@ -37,7 +37,7 @@ void LineController::drawFromCenter()
 	mLine = make_shared<LineView>();
 	mLineWidth = 0.0f;
 	mLinePosition = mSize.x / 2;
-	mLine->setup(vec2(0), Color(0, 0, 0), 3.0f);
+	mLine->setup(vec2(0), Color(0, 0, 0), 5.0f);
 	mLine->setPosition(mLinePosition, mSize.y);
 
 	//animate line out (end point)
