@@ -28,6 +28,11 @@ void MainController::setup() {
 		StyledTextParser::OptionFlags::TRIM_TRAILING_BREAKS
 	);
 
+	mTitle = make_shared<TextView>();
+	mTitle->setup("Cinder Experiments", "title");
+	mTitle->setCenter(getSize() / vec2(2) - vec2(0, mTitle->getHeight()));
+	addChild(mTitle);
+
 	mControllerSize = (getSize() - vec2(200));
 	mControllerButtonSize = vec2(getSize().x / (4 * 2), 70);
 
@@ -46,7 +51,7 @@ void MainController::setup() {
 	mBackToMain->addChild(backText);
 
 	// setup controllers
-	mButtonController = make_shared<ButtonController>();
+	mButtonController = make_shared<ButtonController>(); // could make these grid controllers with an enum and break out content in controllers to diff views
 	mButtonController->setup(mControllerSize, mControllerPosition);
 	mImageController = make_shared<ImageController>();
 	mImageController->setup(mControllerSize, mControllerPosition);
@@ -152,7 +157,7 @@ void MainController::setState(State newState)
 {
 	switch (newState) {
 	case BUTTONS:
-		hideButtons();
+		hideMenu();
 		mButtonController->setAlpha(1.0);
 		//hide
 		mLineController->setAlpha(0.0);
@@ -160,7 +165,7 @@ void MainController::setState(State newState)
 		mTextController->setAlpha(0.0);
 		break;
 	case LINES:
-		hideButtons();
+		hideMenu();
 		mLineController->setAlpha(1.0);
 		//hide
 		mButtonController->setAlpha(0.0);
@@ -168,7 +173,7 @@ void MainController::setState(State newState)
 		mTextController->setAlpha(0.0);
 		break;
 	case IMAGES:
-		hideButtons();
+		hideMenu();
 		mImageController->setAlpha(1.0);
 		//hide
 		mButtonController->setAlpha(0.0);
@@ -176,7 +181,7 @@ void MainController::setState(State newState)
 		mTextController->setAlpha(0.0);
 		break;
 	case TEXT:
-		hideButtons();
+		hideMenu();
 		mTextController->setAlpha(1.0);
 		//hide
 		mButtonController->setAlpha(0.0);
@@ -184,7 +189,7 @@ void MainController::setState(State newState)
 		mLineController->setAlpha(0.0);
 		break;
 	case MAIN:
-		showButtons();
+		showMenu();
 		//hide
 		mButtonController->setAlpha(0.0);
 		mImageController->setAlpha(0.0);
@@ -194,17 +199,28 @@ void MainController::setState(State newState)
 	}
 }
 
-void MainController::hideButtons()
+void MainController::hideMenu()
 {
 	mButtonContainer->setAlpha(0);
+	mTitle->setAlpha(0);
 	mBackToMain->setAlpha(1);
 	mBackToMain->getSignalTapped().connect([=](auto touch) {
 		setState(MAIN);
 	});
+
+	mBackToMain->getSignalTouchBegan().connect([=](auto touch) {
+		mBackToMain->getTimeline()->apply(&mBackToMain->getScale(), vec2(.94f), .1f, EaseInOutSine());
+		});
+	mBackToMain->getSignalTouchEnded().connect([=](auto touch) {
+		mBackToMain->getTimeline()->apply(&mBackToMain->getScale(), vec2(1.0f), .1f, EaseInOutSine());
+		});
+
+	mBackToMain->setTransformOrigin(mBackToMain->getSize() / vec2(2));
 }
 
-void MainController::showButtons()
+void MainController::showMenu()
 {
 	mButtonContainer->setAlpha(1);
+	mTitle->setAlpha(1);
 	mBackToMain->setAlpha(0);
 }

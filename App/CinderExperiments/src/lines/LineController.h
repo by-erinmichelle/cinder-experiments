@@ -15,17 +15,20 @@ public:
 	void setup(ci::vec2 size, ci::vec2 position);
 	void drawFromCenter();
 	void animateLines();
+	void animateText();
 
 private:
 
 	// Views
 	bluecadet::views::LineViewRef mLine;
 	bluecadet::views::TouchViewRef mButton;
+	bluecadet::views::TextViewRef mButtonText;
 	
 	// Props
 	ci::vec2 mSize;
 	ci::Anim<float> mLineWidth;
 	ci::Anim<float> mLinePosition;
-
+	ci::Anim<ci::Color> mButtonTextColor;
+	bool hasAnimated = false;
 	// Consts
 };

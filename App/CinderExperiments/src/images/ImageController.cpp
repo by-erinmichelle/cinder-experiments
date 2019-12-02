@@ -14,7 +14,7 @@ void ImageController::setup(ci::vec2 size, ci::vec2 position)
 	setPosition(position);
 	setAlpha(0.0f);
 
-	mSize = vec2(500);
+	mSize = vec2(300);
 	mPosition = vec2(0);
 
 	ImageManager::getInstance()->loadAllFromDir(getAssetPath("images"));

@@ -28,8 +28,8 @@ public:
 	void setupButtons();
 	void postLoadingSetup();
 	void setState(State newState);
-	void hideButtons();
-	void showButtons();
+	void hideMenu();
+	void showMenu();
 
 private:
 
@@ -45,6 +45,7 @@ private:
 	bluecadet::views::TouchViewRef mShowLineController;
 	bluecadet::views::TouchViewRef mShowTextController;
 	bluecadet::views::TouchViewRef mBackToMain;
+	bluecadet::views::TextViewRef mTitle;
 
 
 	ci::vec2 mControllerButtonSize;

@@ -16,15 +16,20 @@ void LineController::setup(ci::vec2 size, ci::vec2 position)
 	mSize = vec2(100, 0);
 
 	mButton = make_shared<TouchView>();
-	mButton->setSize(100, 50);
+	mButton->setSize(300, 70);
 	mButton->setPosition(size - mButton->getSize());
-	mButton->setBackgroundColor(Color(1, 1, 0));
 	addChild(mButton);
+	mButtonText = make_shared<TextView>();
+	mButtonText->setup("Animate Lines", "menuButton");
+	mButtonText->setCenter(mButton->getSize() / vec2(2));
+	mButton->addChild(mButtonText);
 
 	mButton->getSignalTapped().connect([=](auto touch) {
-		animateLines();
+		if (!hasAnimated) {
+			animateText();
+			animateLines();
+		}
 	});
-
 }
 
 void LineController::drawFromCenter()
@@ -32,7 +37,7 @@ void LineController::drawFromCenter()
 	mLine = make_shared<LineView>();
 	mLineWidth = 0.0f;
 	mLinePosition = mSize.x / 2;
-	mLine->setup(vec2(0), Color(1, 1, 1), 3.0f);
+	mLine->setup(vec2(0), Color(0, 0, 0), 3.0f);
 	mLine->setPosition(mLinePosition, mSize.y);
 
 	//animate line out (end point)
@@ -52,6 +57,7 @@ void LineController::drawFromCenter()
 		//animate line in (start point)
 		mLine->getTimeline()->apply(&mLinePosition, mSize.x / 2, 1.5f, EaseInOutSine()).updateFn([=] {
 			mLine->setPosition(vec2(mLinePosition, mSize.y));
+			hasAnimated = false;
 			});
 	}, 2.0f );
 
@@ -61,4 +67,19 @@ void LineController::drawFromCenter()
 void LineController::animateLines()
 {
 	drawFromCenter();
+}
+
+void LineController::animateText()
+{
+	hasAnimated = true;
+	mButtonTextColor = Color(0, 0, 0);
+	mButtonText->getTimeline()->apply(&mButtonTextColor, Color(.5, .5, .5), .35, EaseInOutSine()).updateFn([=] {
+		mButtonText->setTextColor(mButtonTextColor);
+	});
+
+	dispatchAfter([=] {
+		mButtonText->getTimeline()->apply(&mButtonTextColor, Color(0, 0, 0), .35, EaseInOutSine()).updateFn([=] {
+			mButtonText->setTextColor(mButtonTextColor);
+		});		
+	}, 5.0f);
 }
