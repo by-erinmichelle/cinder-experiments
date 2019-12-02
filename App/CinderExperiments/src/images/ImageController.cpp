@@ -20,6 +20,7 @@ void ImageController::setup(ci::vec2 size, ci::vec2 position)
 	ImageManager::getInstance()->loadAllFromDir(getAssetPath("images"));
 
 	createEllipseMaskImage();
+	createDuotoneImage();
 }
 
 void ImageController::createEllipseMaskImage()
@@ -43,4 +44,15 @@ void ImageController::createEllipseMaskImage()
 	addChild(mMask);
 	mMask->addChild(mImage);
 	mMask->addChild(mEllipseMask);
+}
+
+void ImageController::createDuotoneImage()
+{
+	mDuotoneImage = make_shared<ImageView>();
+	mDuotoneImage->setTexture(ImageManager::getInstance()->getTexture("komondor.jpg"));
+	mDuotoneImage->setScaleMode(ImageView::ScaleMode::COVER);
+	mDuotoneImage->setSize(mSize);
+	mDuotoneImage->setPosition(mPosition + vec2(mSize.x + 100, 0));
+	mDuotoneImage->setTint(Color(1, 0, 1));
+	addChild(mDuotoneImage);
 }
