@@ -21,6 +21,7 @@ void ImageController::setup(ci::vec2 size, ci::vec2 position)
 
 	createEllipseMaskImage();
 	createDuotoneImage();
+	createBWImage();
 }
 
 void ImageController::createEllipseMaskImage()
@@ -55,4 +56,14 @@ void ImageController::createDuotoneImage()
 	mDuotoneImage->setPosition(mPosition + vec2(mSize.x + 100, 0));
 	mDuotoneImage->setTint(Color(1, 0, 1));
 	addChild(mDuotoneImage);
+}
+
+void ImageController::createBWImage()
+{
+	mBWImage = make_shared<ImageView>();
+	mBWImage->setTexture(ImageManager::getInstance()->getTexture("havenese.jpg"));
+	mBWImage->setScaleMode(ImageView::ScaleMode::COVER);
+	mBWImage->setSize(mSize);
+	mBWImage->setPosition(mPosition + vec2((mSize.x + 100) * 2, 0));
+	addChild(mBWImage);
 }

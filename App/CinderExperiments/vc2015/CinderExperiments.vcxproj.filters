@@ -96,6 +96,9 @@
     <Filter Include="Source Files\buttons">
       <UniqueIdentifier>{922ce40c-ab6e-4692-b2a0-0d09cd7231c7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\shaders">
+      <UniqueIdentifier>{a39328c0-026f-450c-97cb-0efe5660014b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\CinderExperimentsApp.cpp">
@@ -395,6 +398,9 @@
     <ClCompile Include="..\src\text\TextController.cpp">
       <Filter>Source Files\text</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\shaders\ShaderController.cpp">
+      <Filter>Source Files\shaders</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h">
@@ -414,6 +420,9 @@
     </ClInclude>
     <ClInclude Include="..\src\text\TextController.h">
       <Filter>Source Files\text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\shaders\ShaderController.h">
+      <Filter>Source Files\shaders</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -13,6 +13,7 @@
 #include "images/ImageController.h"
 #include "lines/LineController.h"
 #include "text/TextController.h"
+#include "shaders/ShaderController.h"
 #include "bluecadet/views/StrokedRectView.h"
 
 typedef std::shared_ptr<class MainController> MainControllerRef;
@@ -38,6 +39,7 @@ private:
 	ImageControllerRef mImageController;
 	LineControllerRef mLineController;
 	TextControllerRef mTextController;
+	ShaderControllerRef mShaderController;
 
 	bluecadet::views::BaseViewRef mButtonContainer;
 	bluecadet::views::TouchViewRef mShowButtonController;

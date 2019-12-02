@@ -60,12 +60,15 @@ void MainController::setup() {
 	mLineController->setup(mControllerSize, mControllerPosition);
 	mTextController = make_shared<TextController>();
 	mTextController->setup(mControllerSize, mControllerPosition);
+	mShaderController = make_shared<ShaderController>();
+	mShaderController->setup();
 
 	// add children
 	addChild(mButtonController);
 	addChild(mImageController);
 	addChild(mLineController);
 	addChild(mTextController);
+	addChild(mShaderController);
 	addChild(mButtonContainer);
 	addChild(mBackToMain);
 }
@@ -159,7 +162,8 @@ void MainController::setState(State newState)
 	switch (newState) {
 	case BUTTONS:
 		hideMenu();
-		mButtonController->setAlpha(1.0);
+		mButtonController->setAlpha(0.0);
+		mShaderController->setAlpha(1.0);
 		//hide
 		mLineController->setAlpha(0.0);
 		mImageController->setAlpha(0.0);
@@ -172,6 +176,8 @@ void MainController::setState(State newState)
 		mButtonController->setAlpha(0.0);
 		mImageController->setAlpha(0.0);
 		mTextController->setAlpha(0.0);
+		mShaderController->setAlpha(0.0);
+
 		break;
 	case IMAGES:
 		hideMenu();
@@ -180,6 +186,8 @@ void MainController::setState(State newState)
 		mButtonController->setAlpha(0.0);
 		mLineController->setAlpha(0.0);
 		mTextController->setAlpha(0.0);
+		mShaderController->setAlpha(0.0);
+
 		break;
 	case TEXT:
 		hideMenu();
@@ -188,6 +196,8 @@ void MainController::setState(State newState)
 		mButtonController->setAlpha(0.0);
 		mImageController->setAlpha(0.0);
 		mLineController->setAlpha(0.0);
+		mShaderController->setAlpha(0.0);
+
 		break;
 	case MAIN:
 		showMenu();
@@ -196,6 +206,8 @@ void MainController::setState(State newState)
 		mImageController->setAlpha(0.0);
 		mTextController->setAlpha(0.0);
 		mLineController->setAlpha(0.0);
+		mShaderController->setAlpha(0.0);
+
 		break;
 	}
 }

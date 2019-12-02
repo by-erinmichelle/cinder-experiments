@@ -17,6 +17,7 @@ public:
 	void setup(ci::vec2 size, ci::vec2 position);
 	void createEllipseMaskImage();
 	void createDuotoneImage();
+	void createBWImage();
 
 private:
 
@@ -25,6 +26,7 @@ private:
 	bluecadet::views::EllipseViewRef  mEllipseMask;
 	bluecadet::views::MaskViewRef	mMask;
 	bluecadet::views::ImageViewRef mDuotoneImage;
+	bluecadet::views::ImageViewRef mBWImage;
 
 	// Props
 	ci::vec2 mSize;

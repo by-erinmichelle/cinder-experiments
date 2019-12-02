@@ -151,6 +151,7 @@
     <ClCompile Include="..\src\images\ImageController.cpp" />
     <ClCompile Include="..\src\lines\LineController.cpp" />
     <ClCompile Include="..\src\MainController.cpp" />
+    <ClCompile Include="..\src\shaders\ShaderController.cpp" />
     <ClCompile Include="..\src\text\TextController.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -206,6 +207,7 @@
     <ClInclude Include="..\src\images\ImageController.h" />
     <ClInclude Include="..\src\lines\LineController.h" />
     <ClInclude Include="..\src\MainController.h" />
+    <ClInclude Include="..\src\shaders\ShaderController.h" />
     <ClInclude Include="..\src\text\TextController.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
