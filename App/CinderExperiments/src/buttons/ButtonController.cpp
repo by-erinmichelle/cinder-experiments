@@ -13,12 +13,12 @@ void ButtonController::setup(ci::vec2 size, ci::vec2 position)
 	setPosition(position);
 	setAlpha(0.0f);
 
-	mSize = vec2(size.x / (6 * kPadding), 50);
+	mSize = vec2(size.x / (6 * kPadding), 70);
 
 	for (int i = 0; i < 16; i++) {
 		auto mButton = make_shared<TouchView>();
 		mButton->setSize(mSize);
-		mButton->setBackgroundColor(Color(1, 1, 0));
+		mButton->setBackgroundColor(Color(0, 0, 1));
 		if (i <= 5)
 			mButton->setPosition(kPosition + vec2(i * mSize.x * kPadding, 0));
 		if (i > 5 && i <= 10)
@@ -28,94 +28,96 @@ void ButtonController::setup(ci::vec2 size, ci::vec2 position)
 
 		addChild(mButton);
 
-		auto mText = make_shared<TextView>();
-		mText->setPosition(vec2(15));
-		mButton->addChild(mText);
+		auto text = make_shared<TextView>();
+		mButton->addChild(text);
 
 		mButtons.push_back(mButton);
 
 		switch (i) {
 			case 0: {
 				handleHitState(EaseInAtan(), i);
-				mText->setText("ease in atan");
+				text->setup("ease in atan", "buttonDemo.easing");
 				break;
 			}
 			case 1: {
 				handleHitState(EaseInBack(), i);
-				mText->setText("ease in back");
+				text->setup("ease in back", "buttonDemo.easing");
 				break;
 			}
 			case 2: {
 				handleHitState(EaseInBounce(), i);
-				mText->setText("ease in bounce");
+				text->setup("ease in bounce", "buttonDemo.easing");
 				break;
 			}
 			case 3: {
 				handleHitState(EaseInCirc(), i);
-				mText->setText("ease in circ");
+				text->setup("ease in circ", "buttonDemo.easing");
 				break;
 			}
 			case 4: {
 				handleHitState(EaseInCubic(), i);
-				mText->setText("ease in cubic");
+				text->setup("ease in cubic", "buttonDemo.easing");
 				break;
 			}
 			case 5: {
 				handleHitState(EaseInExpo(), i);
-				mText->setText("ease in expo");
+				text->setup("ease in expo", "buttonDemo.easing");
 				break;
 			}
 			case 6: {
 				handleHitState(EaseInOutAtan(), i);
-				mText->setText("ease in out atan");
+				text->setup("ease in out atan", "buttonDemo.easing");
 				break;
 			}
 			case 7: {
 				handleHitState(EaseInOutBack(), i);
-				mText->setText("ease in out back");
+				text->setup("ease in out back", "buttonDemo.easing");
 				break;
 			}
 			case 8: {
 				handleHitState(EaseInOutBounce(), i);
-				mText->setText("ease in out bounce");
+				text->setup("ease in out bounce", "buttonDemo.easing");
 				break;
 			}
 			case 9: {
 				handleHitState(EaseInOutCirc(), i);
-				mText->setText("ease in out circ");
+				text->setup("ease in out circ", "buttonDemo.easing");
 				break;
 			}
 			case 10: {
 				handleHitState(EaseInOutCubic(), i);
-				mText->setText("ease in out cubic");
+				text->setup("ease in out cubic", "buttonDemo.easing");
 				break;
 			}
 			case 11: {
 				handleHitState(EaseInOutExpo(), i);
-				mText->setText("ease in out expo");
+				text->setup("ease in out expo", "buttonDemo.easing");
 				break;
 			}
 			case 12: {
 				handleHitState(EaseInOutQuad(), i);
-				mText->setText("ease in out quad");
+				text->setup("ease in out quad", "buttonDemo.easing");
 				break;
 			}
 			case 13: {
 				handleHitState(EaseInOutQuart(), i);
-				mText->setText("ease in out quart");
+				text->setup("ease in out quart", "buttonDemo.easing");
 				break;
 			}
 			case 14: {
 				handleHitState(EaseInOutQuint(), i);
-				mText->setText("ease in out quint");
+				text->setup("ease in out quint", "buttonDemo.easing");
 				break;
 			}
 			case 15: {
 				handleHitState(EaseInOutSine(), i);
-				mText->setText("ease in out sine");
+				text->setup("ease in out sine", "buttonDemo.easing");
 				break;
 			}
+
 		}
+
+		text->setCenter(mButton->getSize() / vec2(2));
 
 		mButton->setTransformOrigin(mButton->getSize() / vec2(2));
 	}

@@ -33,8 +33,9 @@ void MainController::setup() {
 	mTitle->setCenter(getSize() / vec2(2) - vec2(0, mTitle->getHeight()));
 	addChild(mTitle);
 
-	mControllerSize = (getSize() - vec2(200));
 	mControllerButtonSize = vec2(getSize().x / (4 * 2), 70);
+	mControllerSize = (getSize() - vec2(mControllerButtonSize.x));
+	mControllerPosition = vec2(mControllerButtonSize.x / 2);
 
 	// setup buttons
 	mButtonContainer = make_shared<BaseView>();

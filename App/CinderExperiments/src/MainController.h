@@ -50,7 +50,7 @@ private:
 
 	ci::vec2 mControllerButtonSize;
 	ci::vec2 mControllerSize;
-	ci::vec2 mControllerPosition = ci::vec2(100);
+	ci::vec2 mControllerPosition;
 	std::vector<bluecadet::views::TouchViewRef> mButtons;
 
 };

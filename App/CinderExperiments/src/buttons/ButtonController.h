@@ -5,6 +5,7 @@
 
 #include "bluecadet/views/TouchView.h"
 #include "bluecadet/views/TextView.h"
+#include "bluecadet/views/StrokedRectView.h"
 
 
 typedef std::shared_ptr<class ButtonController> ButtonControllerRef;
