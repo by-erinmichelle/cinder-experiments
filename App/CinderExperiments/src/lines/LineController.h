@@ -5,6 +5,7 @@
 
 #include "bluecadet/views/TouchView.h"
 #include "bluecadet/views/TextView.h"
+#include "bluecadet/views/LineView.h"
 
 
 typedef std::shared_ptr<class LineController> LineControllerRef;
@@ -12,11 +13,19 @@ typedef std::shared_ptr<class LineController> LineControllerRef;
 class LineController : public bluecadet::views::BaseView {
 public:
 	void setup(ci::vec2 size, ci::vec2 position);
+	void drawFromCenter();
+	void animateLines();
 
 private:
 
+	// Views
+	bluecadet::views::LineViewRef mLine;
+	bluecadet::views::TouchViewRef mButton;
+	
 	// Props
 	ci::vec2 mSize;
+	ci::Anim<float> mLineWidth;
+	ci::Anim<float> mLinePosition;
 
 	// Consts
 };
